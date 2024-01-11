@@ -1,0 +1,41 @@
+{
+    "name": "hgabka/acl-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony AclBundle fork",
+    "keywords": [],
+    "license": "MIT",
+    "require": {
+        "php": "^8.1",
+        "ext-xml": "*",
+        "symfony/dependency-injection": "^7.0",
+        "symfony/http-kernel": "^7.0",
+        "symfony/security-acl": "^3.0",
+        "symfony/security-bundle": "^7.0"
+    },
+    "require-dev": {
+        "doctrine/doctrine-bundle": "^^2.0",
+        "doctrine/dbal": "^3.1",
+        "doctrine/orm": "^2.7.3",
+        "symfony/console": "^7.0",
+        "symfony/framework-bundle": "^7.0",
+        "symfony/phpunit-bridge": "^7.0",
+        "symfony/yaml": "^7.0"
+    },
+    "suggest": {
+        "doctrine/doctrine-bundle": "To use the default dbal configuration"
+    },
+    "autoload": {
+        "psr-4": { "Symfony\\Bundle\\AclBundle\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Symfony\\Bundle\\AclBundle\\Tests\\": "tests/" }
+    },
+    "conflict": {
+        "doctrine/dbal": "<2.13.1|~3.0.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.x-dev"
+        }
+    }
+}
