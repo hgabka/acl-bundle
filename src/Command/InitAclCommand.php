@@ -65,7 +65,7 @@ EOF
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         try {
-            $this->schema->addToSchema($this->connection->getSchemaManager()->createSchema());
+            $this->schema->addToSchema($this->connection->createSchemaManager()->introspectSchema());
         } catch (SchemaException $e) {
             $output->writeln('Aborting: '.$e->getMessage());
 
