@@ -24,6 +24,9 @@
     "suggest": {
         "doctrine/doctrine-bundle": "To use the default dbal configuration"
     },
+    "replace": {
+        "symfony/acl-bundle": "*"
+    },
     "autoload": {
         "psr-4": { "Symfony\\Bundle\\AclBundle\\": "src/" }
     },
