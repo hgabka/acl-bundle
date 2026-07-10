@@ -1,0 +1,32 @@
+services:
+    _defaults:
+        public: false
+
+    security.acl.object_identity_retrieval_strategy:
+        class: Symfony\Component\Security\Acl\Domain\ObjectIdentityRetrievalStrategy
+
+    security.acl.security_identity_retrieval_strategy:
+        class: Symfony\Component\Security\Acl\Domain\SecurityIdentityRetrievalStrategy
+        arguments:
+            - '@security.role_hierarchy'
+            - '@security.authentication.trust_resolver'
+
+    security.acl.permission_granting_strategy:
+        class: Symfony\Component\Security\Acl\Domain\PermissionGrantingStrategy
+        calls:
+            - [setAuditLogger, ['@?security.acl.audit_logger']]
+
+    security.acl.permission.map:
+        class: Symfony\Component\Security\Acl\Permission\BasicPermissionMap
+
+    security.acl.voter.basic_permissions:
+        class: Symfony\Component\Security\Acl\Voter\AclVoter
+        arguments:
+            - '@security.acl.provider'
+            - '@security.acl.object_identity_retrieval_strategy'
+            - '@security.acl.security_identity_retrieval_strategy'
+            - '@security.acl.permission.map'
+            - '@?logger'
+        tags:
+            - { name: monolog.logger, channel: security }
+            - { name: security.voter, priority: 255 }

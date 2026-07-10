@@ -1,0 +1,16 @@
+services:
+    _defaults:
+        public: false
+
+    Symfony\Bundle\AclBundle\Command\InitAclCommand:
+        arguments:
+            - '@security.acl.dbal.connection'
+            - '@security.acl.dbal.schema'
+        tags:
+            - { name: console.command, command: 'acl:init' }
+
+    Symfony\Bundle\AclBundle\Command\SetAclCommand:
+        arguments:
+            - '@security.acl.provider'
+        tags:
+            - { name: console.command, command: 'acl:set' }
