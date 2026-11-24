@@ -15,6 +15,17 @@ composer require hgabka/acl-bundle
 Symfony\Bundle\AclBundle\AclBundle::class => ['all' => true],
 ```
 
+### Repók
+
+A hgabka csomagok nem szerepelnek a Packagiten, ezért a projekt `composer.json`-jában fel kell venni a repóikat (a függőségek saját `repositories` mezőjét a Composer nem olvassa). A repók nyilvánosak, az `https` url-ekhez nem kell SSH kulcs. Aki GitHub SSH kulccsal dolgozik, használhatja a `git@github.com:hgabka/<név>.git` url-eket is. Kulcs nélkül az anonim GitHub API kérés-limit (60/óra) miatt a Composer előbb-utóbb tokent kérhet.
+
+```json
+"repositories": [
+    {"type": "vcs", "url": "https://github.com/hgabka/acl-bundle.git"},
+    {"type": "vcs", "url": "https://github.com/hgabka/security-acl.git"}
+]
+```
+
 ## Konfiguráció
 
 ```yaml

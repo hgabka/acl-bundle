@@ -4,6 +4,60 @@
     "description": "Symfony AclBundle fork",
     "keywords": [],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:hgabka/logger-bundle.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:hgabka/node-bundle.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:hgabka/media-bundle.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:hgabka/settings-bundle.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:hgabka/utils-bundle.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:hgabka/seo-bundle.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:hgabka/doctrine-translatable.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:hgabka/doctrine-translatable-bundle.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:hgabka/email-bundle.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:hgabka/simple-content-bundle.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:hgabka/i18n-routing-bundle.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:hgabka/security-acl.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:hgabka/pagepart-bundle.git"
+        }
+    ],
     "require": {
         "php": "^8.1",
         "ext-xml": "*",
@@ -13,14 +67,14 @@
         "symfony/security-bundle": "^7.0|^8.1"
     },
     "require-dev": {
-        "doctrine/dbal": "^3.1",
-        "doctrine/doctrine-bundle": "^2.6",
-        "doctrine/orm": "^2.7",
+        "doctrine/dbal": "^4.0",
+        "doctrine/doctrine-bundle": "^2.11|^3.0",
+        "doctrine/orm": "^3.0",
         "phpunit/phpunit": "^10.5|^11.0|^12.0|^13.0",
-        "symfony/console": "^7.0",
-        "symfony/framework-bundle": "^7.0",
-        "symfony/phpunit-bridge": "^7.0",
-        "symfony/yaml": "^7.0"
+        "symfony/console": "^7.0|^8.0",
+        "symfony/framework-bundle": "^7.0|^8.0",
+        "symfony/phpunit-bridge": "^7.0|^8.0",
+        "symfony/yaml": "^7.0|^8.0"
     },
     "suggest": {
         "doctrine/doctrine-bundle": "To use the default dbal configuration"
